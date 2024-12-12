@@ -19,29 +19,30 @@ namespace CSharplight
             int productFirstColumn = 1; 
             int minValue = 0;
             int maxValue = 31;
-            int[,] array = new int[rows, columns];
+            int[,] numbers = new int[rows, columns];
 
             Random random = new Random(); 
 
-            for (int i = 0; i < array.GetLength(0); i++)
+            for (int i = 0; i < numbers.GetLength(0); i++)
             {
-                for (int j = 0; j < array.GetLength(1); j++)
+                for (int j = 0; j < numbers.GetLength(1); j++)
                 {
-                    array[i, j] = random.Next(minValue, maxValue); 
-                    Console.Write(array[i, j] + " "); 
+                    numbers[i, j] = random.Next(minValue, maxValue); 
+                    Console.Write(numbers[i, j] + " "); 
                 }
                 Console.WriteLine(); 
             }
 
-            for (int j = 0; j < array.GetLength(1); j++)
+            for (int j = 0; j < numbers.GetLength(1); j++)
             {
-                sumSecondRow += array[secondRow, j]; 
+                sumSecondRow += numbers[secondRow, j]; 
             }
             
-            for (int i = 0; i < array.GetLength(0); i++)
+            for (int i = 0; i < numbers.GetLength(0); i++)
             {
-                productFirstColumn *= array[i, firstColumn]; 
+                productFirstColumn *= numbers[i, firstColumn]; 
             }
+
             Console.WriteLine($"Сумма второй строки: {sumSecondRow}\nПроизведение первого столбца: {productFirstColumn}");
         }
     }
